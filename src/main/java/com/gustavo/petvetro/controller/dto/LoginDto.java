@@ -3,20 +3,20 @@ package com.gustavo.petvetro.controller.dto;
 import com.gustavo.petvetro.model.Usuario;
 import lombok.Data;
 
+import java.util.Optional;
+
 @Data
-public class UsuarioDto {
+public class LoginDto {
+    private String token;
     private Long id;
     private String usuario;
-    private String nome;
     private String email;
 
-    public UsuarioDto() {
-    }
-
-    public UsuarioDto(Usuario usuario) {
+    public LoginDto(String token, Usuario usuario) {
+        this.token = token;
         this.id = usuario.getId();
         this.usuario = usuario.getUsuario();
-        this.nome = usuario.getNome();
         this.email = usuario.getEmail();
+
     }
 }
